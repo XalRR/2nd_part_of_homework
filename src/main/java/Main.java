@@ -18,7 +18,7 @@ public class Main {
         Scanner scanner5 = new Scanner(System.in);
         Scanner scanner6 = new Scanner(System.in);
         Connection connection = DriverManager.getConnection(DB_URL,DB_USERNAME,DB_PASSWORD);
-        Statement createStatement = connection.createStatement();
+        Statement createeStatement = connection.createStatement();
         Statement checkStatement = connection.createStatement();
         String SQL_CHECKTABLE = "select id,first_name,last_name from employee;";
         String SQL_CREATETABLE = "CREATE TABLE employee (id SERIAL PRIMARY KEY,first_name varchar(20),last_name varchar(20));";
@@ -31,7 +31,7 @@ public class Main {
         catch(SQLException exc)
         {
 
-            createStatement.executeUpdate(SQL_CREATETABLE);
+            createeStatement.executeUpdate(SQL_CREATETABLE);
             System.out.println("Таблица employee создана!");
         }
         
