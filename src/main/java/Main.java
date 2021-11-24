@@ -18,6 +18,9 @@ public class Main {
         Scanner scanner5 = new Scanner(System.in);
         Scanner scanner6 = new Scanner(System.in);
         Connection connection = DriverManager.getConnection(DB_URL,DB_USERNAME,DB_PASSWORD);
+        Statement createStatement = connection.createStatement();
+        String SQL_CREATETABLE = "CREATE TABLE employee (id SERIAL PRIMARY KEY,first_name varchar(20),last_name varchar(20));";
+        createStatement.executeUpdate(SQL_CREATETABLE);
         while(true){
             System.out.println("1. Создать сотрудника");
             System.out.println("2. Просмотреть список сотрудников");
